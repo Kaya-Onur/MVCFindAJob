@@ -50,7 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAdminDal.cs" />
+    <Compile Include="Abstract\ICityDal.cs" />
+    <Compile Include="Abstract\ICompanyDal.cs" />
+    <Compile Include="Abstract\IDepartmentDal.cs" />
+    <Compile Include="Abstract\IEducationStatusDal.cs" />
+    <Compile Include="Abstract\IForeignLanguageDal.cs" />
+    <Compile Include="Abstract\IJobAdvertisementDal.cs" />
+    <Compile Include="Abstract\IJobTypeDal.cs" />
+    <Compile Include="Abstract\IProfessionDal.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISectorDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +76,9 @@
       <Project>{0acc682e-5c21-4d39-b1ec-f3e480ff7e38}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EntityFramework\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

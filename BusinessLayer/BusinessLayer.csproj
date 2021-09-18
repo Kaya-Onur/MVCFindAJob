@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +48,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\ICityService.cs" />
+    <Compile Include="Abstract\ICompanyService.cs" />
+    <Compile Include="Abstract\IDepartmentService.cs" />
+    <Compile Include="Abstract\IEducationStatusService.cs" />
+    <Compile Include="Abstract\IForeignLanguageService.cs" />
+    <Compile Include="Abstract\IJobAdvertisementService.cs" />
+    <Compile Include="Abstract\IJobTypeService.cs" />
+    <Compile Include="Abstract\IProfessionService.cs" />
+    <Compile Include="Abstract\ISectorService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\CityManager.cs" />
+    <Compile Include="Concrete\CompanyManager.cs" />
+    <Compile Include="Concrete\DepartmentManager.cs" />
+    <Compile Include="Concrete\EducationStatusManager.cs" />
+    <Compile Include="Concrete\ForeignLanguageManager.cs" />
+    <Compile Include="Concrete\JobAdvertisementManager.cs" />
+    <Compile Include="Concrete\JobTypeManager.cs" />
+    <Compile Include="Concrete\ProfessionManager.cs" />
+    <Compile Include="Concrete\SectorManager.cs" />
+    <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{36ad7d49-2c8d-492e-a620-43ef30af0b07}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{0acc682e-5c21-4d39-b1ec-f3e480ff7e38}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

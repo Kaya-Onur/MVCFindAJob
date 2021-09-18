@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace MvcFindAJob.Controllers
 {
-    public class TestController : Controller
+    public class UserController : Controller
     {
-        // GET: Test
+        // GET: User
         public ActionResult Index()
         {
             return View();
