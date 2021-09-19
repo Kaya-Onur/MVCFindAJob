@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model List<User>
+@{
+    ViewBag.Title = "GetUserList";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Fotoğraf</th>
+        <th>Email</th>
+        <th>Şifre</th>
+        <th>Eğitim Durumu</th>
+        <th>Yabancı Dil</th>
+        <th>Meslek</th>
+        <th>Şehir</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.UserID</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.UserImage</td>
+                    <td>@item.Email</td>
+                    <td>@item.Password</td>
+                    <td>@item.EducationStatusID</td>
+                    <td>@item.ForeignLanguageID</td>
+                    <td>@item.ProfessionID</td>
+                    <td>@item.CityID</td>
+                </tr>
+            }
+</table>
+
+<a class="btn btn-primary" href="/User/AddUser/">Kullanıcı Ekle</a>
+

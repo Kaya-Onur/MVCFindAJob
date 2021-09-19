@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+@{
+    ViewBag.Title = "GetAdminList";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Email</th>
+        <th>Şifre</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AdminID</td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Email</td>
+            <td>@item.Password</td>
+
+        </tr>
+    }
+</table>
+
+<a class="btn btn-primary" href="#">Admin Ekle</a>
+

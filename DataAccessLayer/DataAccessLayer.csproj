@@ -64,6 +64,17 @@
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
+    <Compile Include="EntityFramework\EfCityDal.cs" />
+    <Compile Include="EntityFramework\EfCompanyDal.cs" />
+    <Compile Include="EntityFramework\EfDepartmentDal.cs" />
+    <Compile Include="EntityFramework\EfEducationStatusDal.cs" />
+    <Compile Include="EntityFramework\EfForeignLanguageDal.cs" />
+    <Compile Include="EntityFramework\EfJobAdvertisementDal.cs" />
+    <Compile Include="EntityFramework\EfJobTypeDal.cs" />
+    <Compile Include="EntityFramework\EfProfessionDal.cs" />
+    <Compile Include="EntityFramework\EfSectorDal.cs" />
+    <Compile Include="EntityFramework\EfUserDal.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,8 +88,6 @@
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntityFramework\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
