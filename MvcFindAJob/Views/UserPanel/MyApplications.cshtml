@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<JobAdvertisement>
+
+@{
+    ViewBag.Title = "MyApplications";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>iş Başvurularım</h2>
+@foreach (var item in Model)
+{
+    <div class="media border p-3" style="margin-bottom:10px;">
+        <img src="https://cdn.shortpixel.ai/client/q_lossless,ret_img,w_728,h_723/https://grafiktasarim.ist/wp-content/uploads/2019/07/gtist-logo-v3-04.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="max-width:60px;">
+        <div class="media-body">
+            <h4>@item.JobAdvertisementID @item.JobType.Name <small><i>@(((DateTime)item.AdversimentDate).ToString("dd-MMM-yyyy"))</i></small></h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Email: </b>@item.Company.CompanyName</li>
+                <li class="list-group-item"><b>Departman: </b>@item.Department.Name</li>
+                <li class="list-group-item"><b>Eğitim: </b>@item.EducationStatus.Name</li>
+                <li class="list-group-item"><b>Y.Dil: </b>@item.ForeignLanguage.Name</li>
+                <li class="list-group-item"><b>Tecrübe: </b>@item.Experience</li>
+                <li class="list-group-item"><b>Askerlik: </b>@item.MilitaryStatus</li>
+                <li class="list-group-item"><b>Genel Kriterler: </b>@item.GeneralQualifications</li>
+                <li class="list-group-item"><b>Şehir: </b>@item.JobDescription</li>
+                @if (item.jobAdvertisementStatus == true)
+                {
+
+                    <li class="list-group-item"><b>Durum: </b>İlan Yayında</li>
+                }
+                else
+                {
+                    <li class="list-group-item"><b>Durum: </b>İlan Yayından Kaldırılmış</li>
+                }
+
+            </ul>
+
+
+            <div class="card-body">
+                <a href="/UserPanel/DeleteJobAdvertisement/@item.JobAdvertisementID" class="btn btn-outline-danger">Basvurunu Kaldır</a>
+
+            </div>
+        </div>
+    </div>
+
+}
+

@@ -62,6 +62,7 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\ISectorDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Abstract\IUserJobAdvertisementDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
@@ -75,6 +76,23 @@
     <Compile Include="EntityFramework\EfProfessionDal.cs" />
     <Compile Include="EntityFramework\EfSectorDal.cs" />
     <Compile Include="EntityFramework\EfUserDal.cs" />
+    <Compile Include="EntityFramework\EfUserJobAdvertisementDal.cs" />
+    <Compile Include="Migrations\202109201547463_addedStatusEntities.cs" />
+    <Compile Include="Migrations\202109201547463_addedStatusEntities.Designer.cs">
+      <DependentUpon>202109201547463_addedStatusEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109201614255_deletedJobAdvertisementStatus.cs" />
+    <Compile Include="Migrations\202109201614255_deletedJobAdvertisementStatus.Designer.cs">
+      <DependentUpon>202109201614255_deletedJobAdvertisementStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109211029430_userjobadvertisementTableAddStatus.cs" />
+    <Compile Include="Migrations\202109211029430_userjobadvertisementTableAddStatus.Designer.cs">
+      <DependentUpon>202109211029430_userjobadvertisementTableAddStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109211139178_adminTableAddAdminRole.cs" />
+    <Compile Include="Migrations\202109211139178_adminTableAddAdminRole.Designer.cs">
+      <DependentUpon>202109211139178_adminTableAddAdminRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +106,19 @@
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202109201547463_addedStatusEntities.resx">
+      <DependentUpon>202109201547463_addedStatusEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109201614255_deletedJobAdvertisementStatus.resx">
+      <DependentUpon>202109201614255_deletedJobAdvertisementStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109211029430_userjobadvertisementTableAddStatus.resx">
+      <DependentUpon>202109211029430_userjobadvertisementTableAddStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109211139178_adminTableAddAdminRole.resx">
+      <DependentUpon>202109211139178_adminTableAddAdminRole.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

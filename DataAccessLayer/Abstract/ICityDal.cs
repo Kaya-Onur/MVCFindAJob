@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    interface ICityDal: IRepository<City>
+    public interface ICityDal: IRepository<City>
     {
     }
 }

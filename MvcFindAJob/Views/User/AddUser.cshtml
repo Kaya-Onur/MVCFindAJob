@@ -1,8 +1,46 @@
-﻿
+﻿@model EntityLayer.Concrete.User
 @{
     ViewBag.Title = "AddUser";
     Layout = "~/Views/Shared/_JobLayout.cshtml";
 }
 
-<h2>AddUser</h2>
+<h2>Kullanıcı Ekleme Sayfası</h2>
+@using (Html.BeginForm("AddUser", "User", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.UserID)
+    @Html.Label("İsim")
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fotoğraf")
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Email")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    @Html.Label("Eğitim Durumu")
+    @Html.DropDownListFor(x => x.EducationStatusID, (List<SelectListItem>)ViewBag.educationVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yabancı Dil")
+    @Html.DropDownListFor(x => x.ForeignLanguageID, (List<SelectListItem>)ViewBag.foreignVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Meslek")
+    @Html.DropDownListFor(x => x.ProfessionID, (List<SelectListItem>)ViewBag.professionVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şehir")
+    @Html.DropDownListFor(x => x.CityID, (List<SelectListItem>)ViewBag.cityVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+</div>
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+
+}
 

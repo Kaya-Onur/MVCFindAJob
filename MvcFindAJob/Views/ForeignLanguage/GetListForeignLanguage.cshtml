@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<ForeignLanguage>
+@{
+    ViewBag.Title = "GetListForeignLanguage";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2>Yabancı Diller Sayfası</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ForeignLanguageID</td>
+            <td>@item.Name</td>
+            <td>@item.Status</td>
+            <td><a href="/ForeignLanguage/DeleteForeignLanguage/@item.ForeignLanguageID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/ForeignLanguage/UpdateForeignLanguage/@item.ForeignLanguageID" class="btn btn-outline-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+
+<a class="btn btn-outline-info" href="/ForeignLanguage/AddForeignLanguage">Yabancı Dil Ekle</a>
+

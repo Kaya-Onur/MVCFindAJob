@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IUserService
+    public interface IUserService : IService<User>
     {
-        List<User> GetList();
-        void UserAdd(User user);
-        User GetByID(int id);
-        void UserDelete(User user);
-        void UserUpdate(User user);
+        
     }
 }

@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.JobAdvertisement
+@{
+    ViewBag.Title = "GetJobAdvertisement";
+    Layout = "~/Views/Default/JobAdvertisementList.cshtml";
+}
+
+
+<div class="media border p-3" style="margin-bottom:10px;">
+    <img src="https://cdn.shortpixel.ai/client/q_lossless,ret_img,w_728,h_723/https://grafiktasarim.ist/wp-content/uploads/2019/07/gtist-logo-v3-04.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="max-width:60px;">
+    <div class="media-body">
+        <h4>@Model.JobAdvertisementID @Model.JobType.Name <small><i>@(((DateTime)Model.AdversimentDate).ToString("dd-MMM-yyyy"))</i></small></h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Email: </b>@Model.Company.CompanyName</li>
+            <li class="list-group-item"><b>Departman: </b>@Model.Department.Name</li>
+            <li class="list-group-item"><b>Eğitim: </b>@Model.EducationStatus.Name</li>
+            <li class="list-group-item"><b>Y.Dil: </b>@Model.ForeignLanguage.Name</li>
+            <li class="list-group-item"><b>Tecrübe: </b>@Model.Experience</li>
+            <li class="list-group-item"><b>Askerlik: </b>@Model.MilitaryStatus</li>
+            <li class="list-group-item"><b>Genel Kriterler: </b>@Model.GeneralQualifications</li>
+            <li class="list-group-item"><b>Şehir: </b>@Model.JobDescription</li>
+            @if (Model.jobAdvertisementStatus)
+            {
+
+                <li class="list-group-item"><b>Durum: </b>İlan Yayında</li>
+            }
+            else
+            {
+                <li class="list-group-item"><b>Durum: </b>İlan Yayından Kaldırılmış</li>
+            }
+
+        </ul>
+
+
+        <div class="card-body">
+
+            <a href="/UserJobAdvertisement/AddJobAdvertisement/@Model.JobAdvertisementID" class="btn btn-outline-info">Başvur</a>
+        </div>
+    </div>
+</div>
+

@@ -61,6 +61,8 @@
     <Compile Include="Abstract\IJobTypeService.cs" />
     <Compile Include="Abstract\IProfessionService.cs" />
     <Compile Include="Abstract\ISectorService.cs" />
+    <Compile Include="Abstract\IService.cs" />
+    <Compile Include="Abstract\IUserJobAdvertisementService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\CityManager.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Concrete\JobTypeManager.cs" />
     <Compile Include="Concrete\ProfessionManager.cs" />
     <Compile Include="Concrete\SectorManager.cs" />
+    <Compile Include="Concrete\UserJobAdvertisementManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\AdminValidatior.cs" />

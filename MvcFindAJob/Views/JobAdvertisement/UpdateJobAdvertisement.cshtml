@@ -1,0 +1,51 @@
+﻿@model EntityLayer.Concrete.JobAdvertisement
+@{
+    ViewBag.Title = "UpdateJobAdvertisement";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2>İş İlanı Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateJobAdvertisement", "JobAdvertisement", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.JobAdvertisementID)
+    @Html.Label("İlan Tarihi")
+    @Html.TextBoxFor(x => x.AdversimentDate, new { @class = "form-control" })
+    <br />
+    @Html.Label("İlan Durumu")
+    @Html.TextBoxFor(x => x.jobAdvertisementStatus, new { @class = "form-control" })
+    <br />
+    @Html.Label("Genel Kriterler")
+    @Html.TextBoxFor(x => x.GeneralQualifications, new { @class = "form-control" })
+    <br />
+    @Html.Label("İş Tanımı")
+    @Html.TextBoxFor(x => x.JobDescription, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tecrübe")
+    @Html.TextBoxFor(x => x.Experience, new { @class = "form-control" })
+    <br />
+    @Html.Label("Askerlik Durumu")
+    @Html.TextBoxFor(x => x.MilitaryStatus, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Şirket")
+    @Html.DropDownListFor(x => x.CompanyID, (List<SelectListItem>)ViewBag.companyVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("İş Tipi")
+    @Html.DropDownListFor(x => x.JobTypeID, (List<SelectListItem>)ViewBag.jobTypeVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Departman")
+    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.departmentVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Eğitim Durumu")
+    @Html.DropDownListFor(x => x.EducationStatusID, (List<SelectListItem>)ViewBag.educationVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yabancı Dil")
+    @Html.DropDownListFor(x => x.ForeignLanguageID, (List<SelectListItem>)ViewBag.foreignVl, new { @class = "form-control" })
+
+</div>
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+
+}

@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<Company>
+@{
+    ViewBag.Title = "GetListCompany";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2 class="d-inline mr-3">Şirketler Sayfası</h2>
+<a class="btn btn-primary" style="position:fixed; right:30px;" href="/Company/AddCompany">Şirket Ekle</a>
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="card" style="max-width:300px; margin:0px 0px 10px 10px;">
+            <img class="card-img-top" src="https://miro.medium.com/max/430/1*Uy5CBySWOJjbb_WKS8egBg.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.CompanyID @item.CompanyName</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Email: </b>@item.Email</li>
+                <li class="list-group-item"><b>Şifre: </b>@item.Password</li>
+                <li class="list-group-item"><b>Web: </b>@item.CompanyWebsite</li>
+                <li class="list-group-item"><b>Web: </b>@item.Sector.Name</li>
+                <li class="list-group-item"><b>Şehir: </b>@item.City.Name</li>
+                <li class="list-group-item"><b>Durum: </b>@item.Status</li>
+            </ul>
+            <div class="card-body">
+                <a href="/Company/DeleteCompany/@item.CompanyID" class="btn btn-outline-danger">Sil</a>
+                <a href="/Company/UpdateCompany/@item.CompanyID" class="btn btn-outline-success">Güncelle</a>
+
+            </div>
+        </div>
+    }
+
+</div>
+
+
+
+
+
+
+

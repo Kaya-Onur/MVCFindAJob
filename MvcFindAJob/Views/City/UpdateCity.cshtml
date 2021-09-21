@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.City
+@{
+    ViewBag.Title = "UpdateCity";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2>Şehir Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateCity", "City", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.CityID)
+    @Html.Label("İsim")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+</div>
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+
+}
+

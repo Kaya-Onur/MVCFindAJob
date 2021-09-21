@@ -5,35 +5,36 @@
     Layout = "~/Views/Shared/_JobLayout.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Ad</th>
-        <th>Soyad</th>
-        <th>Fotoğraf</th>
-        <th>Email</th>
-        <th>Şifre</th>
-        <th>Eğitim Durumu</th>
-        <th>Yabancı Dil</th>
-        <th>Meslek</th>
-        <th>Şehir</th>
-    </tr>
-    @foreach(var item in Model)
-            {
-                <tr>
-                    <td>@item.UserID</td>
-                    <td>@item.FirstName</td>
-                    <td>@item.LastName</td>
-                    <td>@item.UserImage</td>
-                    <td>@item.Email</td>
-                    <td>@item.Password</td>
-                    <td>@item.EducationStatusID</td>
-                    <td>@item.ForeignLanguageID</td>
-                    <td>@item.ProfessionID</td>
-                    <td>@item.CityID</td>
-                </tr>
-            }
-</table>
+<h2 class="d-inline mr-3">Kullanıcı Sayfası</h2>
+<a class="btn btn-primary" style="position:fixed; right:30px;" href="/User/AddUser/">Kullanıcı Ekle</a>
 
-<a class="btn btn-primary" href="/User/AddUser/">Kullanıcı Ekle</a>
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="card" style="max-width:300px; margin:0px 0px 10px 10px;">
+            <img class="card-img-top" src="https://www.datasciencearth.com/wp-content/uploads/2021/05/user-member-avatar-face-profile-icon-vector-22965342-e1619819871835.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.UserID @item.FirstName @item.LastName</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Email: </b>@item.Email</li>
+                <li class="list-group-item"><b>Şifre: </b>@item.Password</li>
+                <li class="list-group-item"><b>Eğitim: </b>@item.EducationStatus.Name</li>
+                <li class="list-group-item"><b>Y.Dil: </b>@item.ForeignLanguage.Name</li>
+                <li class="list-group-item"><b>Meslek: </b>@item.Profession.Name</li>
+                <li class="list-group-item"><b>Şehir: </b>@item.City.Name</li>
+                <li class="list-group-item"><b>Durum: </b>@item.Status</li>
+            </ul>
+            <div class="card-body">
+                <a href="/User/DeleteUser/@item.UserID" class="btn btn-outline-danger">Sil</a>
+                <a href="/User/UpdateUser/@item.UserID" class="btn btn-outline-success">Güncelle</a>
+            </div>
+        </div>
+    }
+
+</div>
+
+
+
 

@@ -21,6 +21,7 @@ namespace EntityLayer.Concrete
         public string Email { get; set; }
         [StringLength(20)]
         public string Password { get; set; }
+        public bool Status { get; set; }
 
 
         public ICollection<UserJobAdvertisement> UserJobAdvertisements { get; set; }

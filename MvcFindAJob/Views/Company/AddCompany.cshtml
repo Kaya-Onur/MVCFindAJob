@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Company
+@{
+    ViewBag.Title = "AddCompany";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2>Şirket Ekleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("AddCompany", "Company", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.CompanyID)
+    @Html.Label("İsim")
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Email")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    @Html.Label("Logo")
+    @Html.TextBoxFor(x => x.Logo, new { @class = "form-control" })
+    <br />
+    @Html.Label("Web Sayfası")
+    @Html.TextBoxFor(x => x.CompanyWebsite, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şehir")
+    @Html.DropDownListFor(x => x.CityID, (List<SelectListItem>)ViewBag.cityVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sektör")
+    @Html.DropDownListFor(x => x.SectorID, (List<SelectListItem>)ViewBag.sectorVl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+
+</div>
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+
+}
+

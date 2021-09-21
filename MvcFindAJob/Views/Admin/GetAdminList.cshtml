@@ -13,6 +13,10 @@
         <th>Soyad</th>
         <th>Email</th>
         <th>Şifre</th>
+        <th>Durum</th>
+        <th>Admin Seviye</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
 
     </tr>
     @foreach (var item in Model)
@@ -23,10 +27,14 @@
             <td>@item.LastName</td>
             <td>@item.Email</td>
             <td>@item.Password</td>
+            <td>@item.Status</td>
+            <td>@item.AdminRole</td>
+            <td><a href="/Admin/DeleteAdmin/@item.AdminID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/UpdateAdmin/@item.AdminID" class="btn btn-outline-success">Güncelle</a></td>
 
         </tr>
     }
 </table>
 
-<a class="btn btn-primary" href="#">Admin Ekle</a>
+<a class="btn btn-outline-info" href="/Admin/AddAdmin">Admin Ekle</a>
 

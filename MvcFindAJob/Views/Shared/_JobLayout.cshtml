@@ -12,8 +12,64 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand m-auto" href="#">FindAJob</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Üye Ol</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Üye Girişi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">İşveren</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Admin</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="İş Ara" aria-label="Search">
+                    <button class="btn btn-outline-success p-1 mr-1" type="submit">Ara</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mr-1 ml-1 mb-2 mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group list-group-flush">
+                    @if (User.IsInRole("A"))
+                    {
+                        <a href="~/Admin/GetAdminList" class="list-group-item list-group-item-action">Admin</a>
+                        <a href="~/City/GetListCity" class="list-group-item list-group-item-action">Şehirler</a>
+                        <a href="~/Department/GetListDepartment" class="list-group-item list-group-item-action">Departmanlar</a>
+                        <a href="~/EducationStatus/GetListEducationStatus" class="list-group-item list-group-item-action">Eğitim Durumları</a>
+                        <a href="~/ForeignLanguage/GetListForeignLanguage" class="list-group-item list-group-item-action">Yabancı Diller</a>
+
+                        <a href="~/JobType/GetListJobType" class="list-group-item list-group-item-action">İş Tipleri</a>
+                        <a href="~/Profession/GetListProfession" class="list-group-item list-group-item-action">Meslekler</a>
+                        <a href="~/Sector/GetListSector" class="list-group-item list-group-item-action">Sektörler</a>
+                        <a href="~/ErrorPage/Page404" class="list-group-item list-group-item-action">Hata Sayfaları</a>
+                    }
+
+                    <a href="~/Company/GetListCompany" class="list-group-item list-group-item-action">Şirketler</a>
+                    <a href="~/User/GetUserList" class="list-group-item list-group-item-action">Kullanıcılar</a>
+                    <a href="~/JobAdvertisement/GetListJobAdvertisement" class="list-group-item list-group-item-action">İş İlanları</a>
+
+                    <a href="~/Default/Index" class="list-group-item list-group-item-action">Çıkış Yap</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
     </div>
+
 </body>
 </html>

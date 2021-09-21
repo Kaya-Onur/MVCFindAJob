@@ -22,6 +22,7 @@ namespace EntityLayer.Concrete
         
         public int Experience { get; set; }
         public bool MilitaryStatus { get; set; }
+ 
 
 
         public ICollection<UserJobAdvertisement> UserJobAdvertisements { get; set; }

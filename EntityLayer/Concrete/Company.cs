@@ -21,6 +21,7 @@ namespace EntityLayer.Concrete
         public string Logo { get; set; }
         [StringLength(1000)]
         public string CompanyWebsite { get; set; }
+        public bool Status { get; set; }
 
 
         public int CityID { get; set; }

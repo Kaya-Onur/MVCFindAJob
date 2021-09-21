@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-   public interface IAdminService
+   public interface IAdminService : IService<Admin>
     {
-        List<Admin> GetList();
-        void AdminAdd(Admin admin);
-        Admin GetByID(int id);
-        void AdminDelete(Admin admin);
-        void AdminUpdate(Admin admin);
+       
     }
 }

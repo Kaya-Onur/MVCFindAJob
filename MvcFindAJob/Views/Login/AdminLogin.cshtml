@@ -1,0 +1,38 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminLogin</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" style="margin:230px auto; max-width:350px;">
+        <h2>Admin Giriş</h2>
+        <hr />
+        @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="Email">Email adres:</label>
+                <input name="Email" type="email" class="form-control" placeholder="Email giriniz" id="Email">
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Şifre:</label>
+                <input name="Password" type="password" class="form-control" placeholder="Şifre giriniz" id="Password">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            <a href="#" class="btn btn-info">Ana Sayfa</a>
+        }
+
+
+    </div>
+</body>
+</html>

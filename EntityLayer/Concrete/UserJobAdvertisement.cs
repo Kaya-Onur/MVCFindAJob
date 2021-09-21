@@ -13,8 +13,10 @@ namespace EntityLayer.Concrete
         
         public int JobAdvertisementID { get; set; }
         public int UserID { get; set; }
-        
-       
+        public bool Status { get; set; }
+
+
+
 
         public User User { get; set; }
         public JobAdvertisement JobAdvertisement { get; set; }

@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Department
+@{
+    ViewBag.Title = "AddDepartment";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2>Departman Ekleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("AddDepartment", "Department", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.DepartmentID)
+    @Html.Label("İsim")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+
+
+</div>
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+
+}
+

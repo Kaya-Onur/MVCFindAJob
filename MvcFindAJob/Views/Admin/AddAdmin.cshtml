@@ -11,22 +11,29 @@
 <div class="form-group">
     @Html.HiddenFor(x => x.AdminID)
     @Html.Label("İsim")
-    @Html.TextBoxFor(x => x.FirstName)
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.FirstName)
     <br />
     @Html.Label("Soyisim")
-    @Html.TextBoxFor(x => x.LastName)
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.LastName)
     <br />
     @Html.Label("Email")
-    @Html.TextBoxFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.Email)
     <br />
     @Html.Label("Şifre")
-    @Html.TextBoxFor(x => x.Password)
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.Password)
+    <br />
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+    @Html.Label("Admin Rol")
+    @Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })
 </div>
-<button class="btn btn-success">Kaydet</button>
+<br />
+<button class="btn btn-outline-info">Kaydet</button>
 
 }
 

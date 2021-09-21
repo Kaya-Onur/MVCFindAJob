@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+
+<h2>Admin Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateAdmin", "Admin", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.AdminID)
+    @Html.Label("İsim")
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FirstName)
+    <br />
+    @Html.Label("Soyisim")
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.LastName)
+    <br />
+    @Html.Label("Email")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Email)
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Password)
+    <br />
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+    @Html.Label("Admin Rol")
+    @Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })
+</div>
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+
+}
+

@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public int DepartmentID { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
+        public bool Status { get; set; }
 
         public ICollection<JobAdvertisement> jobAdvertisements { get; set; }
 

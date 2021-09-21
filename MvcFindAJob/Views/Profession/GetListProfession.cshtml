@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<Profession>
+@{
+    ViewBag.Title = "GetListProfession";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2>Meslekler Sayfası</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProfessionID</td>
+            <td>@item.Name</td>
+            <td>@item.Status</td>
+            <td><a href="/Profession/DeleteProfession/@item.ProfessionID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Profession/UpdateProfession/@item.ProfessionID" class="btn btn-outline-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+
+<a class="btn btn-outline-info" href="/Profession/AddProfession">Meslek Ekle</a>
+

@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public int ForeignLanguageID { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
+        public bool Status { get; set; }
 
         public ICollection<User> Users { get; set; }
 

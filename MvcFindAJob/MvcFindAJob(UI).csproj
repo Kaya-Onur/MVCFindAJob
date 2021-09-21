@@ -127,11 +127,26 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\EducationStatusController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\ForeignLanguageController.cs" />
+    <Compile Include="Controllers\JobAdvertisementController.cs" />
+    <Compile Include="Controllers\JobTypeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProfessionController.cs" />
+    <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserJobAdvertisementController.cs" />
+    <Compile Include="Controllers\UserPanelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -186,10 +201,50 @@
     <Content Include="Views\User\AddUser.cshtml" />
     <Content Include="Views\Admin\GetAdminList.cshtml" />
     <Content Include="Views\Admin\AddAdmin.cshtml" />
+    <Content Include="Views\Admin\UpdateAdmin.cshtml" />
+    <Content Include="Views\Department\GetListDepartment.cshtml" />
+    <Content Include="Views\EducationStatus\GetListEducationStatus.cshtml" />
+    <Content Include="Views\ForeignLanguage\GetListForeignLanguage.cshtml" />
+    <Content Include="Views\JobType\GetListJobType.cshtml" />
+    <Content Include="Views\Profession\GetListProfession.cshtml" />
+    <Content Include="Views\Sector\GetListSector.cshtml" />
+    <Content Include="Views\Company\GetListCompany.cshtml" />
+    <Content Include="Views\JobAdvertisement\GetListJobAdvertisement.cshtml" />
+    <Content Include="Views\City\GetListCity.cshtml" />
+    <Content Include="Views\City\AddCity.cshtml" />
+    <Content Include="Views\Company\AddCompany.cshtml" />
+    <Content Include="Views\Department\AddDepartment.cshtml" />
+    <Content Include="Views\EducationStatus\AddEducationStatus.cshtml" />
+    <Content Include="Views\ForeignLanguage\AddForeignLanguage.cshtml" />
+    <Content Include="Views\JobAdvertisement\AddJobAdvertisement.cshtml" />
+    <Content Include="Views\JobType\AddJobType.cshtml" />
+    <Content Include="Views\Profession\AddProfession.cshtml" />
+    <Content Include="Views\Sector\AddSector.cshtml" />
+    <Content Include="Views\City\UpdateCity.cshtml" />
+    <Content Include="Views\Company\UpdateCompany.cshtml" />
+    <Content Include="Views\Department\UpdateDepartment.cshtml" />
+    <Content Include="Views\EducationStatus\UpdateEducationStatus.cshtml" />
+    <Content Include="Views\ForeignLanguage\UpdateForeignLanguage.cshtml" />
+    <Content Include="Views\JobAdvertisement\UpdateJobAdvertisement.cshtml" />
+    <Content Include="Views\JobType\UpdateJobType.cshtml" />
+    <Content Include="Views\Profession\UpdateProfession.cshtml" />
+    <Content Include="Views\Sector\UpdateSector.cshtml" />
+    <Content Include="Views\User\UpdateUser.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\UserPanel\UserProfile.cshtml" />
+    <Content Include="Views\UserPanel\MyApplications.cshtml" />
+    <Content Include="Views\UserPanel\GetListJobAdvertisement.cshtml" />
+    <Content Include="Views\Login\UserLogin.cshtml" />
+    <Content Include="Views\Default\JobAdvertisementList.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\GetJobAdvertisement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\UserJobAdvertisement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

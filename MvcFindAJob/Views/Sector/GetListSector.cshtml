@@ -1,0 +1,33 @@
+﻿@using EntityLayer.Concrete
+@model List<Sector>
+@{
+    ViewBag.Title = "GetListSector";
+    Layout = "~/Views/Shared/_JobLayout.cshtml";
+}
+
+<h2>Sektör Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SectorID</td>
+            <td>@item.Name</td>
+            <td>@item.Status</td>
+            <td><a href="/Sector/DeleteSector/@item.SectorID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Sector/UpdateSector/@item.SectorID" class="btn btn-outline-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+
+<a class="btn btn-outline-info" href="/Sector/AddSector">Sektör Ekle</a>
+
+

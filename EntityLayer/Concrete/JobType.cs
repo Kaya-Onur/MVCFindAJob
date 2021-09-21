@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public int JobTypeID { get; set; }
         [StringLength(100)]
         public string Name { get; set; }
+        public bool Status { get; set; }
 
         public ICollection<JobAdvertisement> jobAdvertisements { get; set; }
     }

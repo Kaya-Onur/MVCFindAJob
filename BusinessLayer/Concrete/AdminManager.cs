@@ -17,17 +17,18 @@ namespace BusinessLayer.Concrete
         {
             _adminDal = adminDal;
         }
-        public void AdminAdd(Admin admin)
+        public void Add(Admin admin)
         {
             _adminDal.Insert(admin);
         }
 
-        public void AdminDelete(Admin admin)
+        public void Delete(Admin admin)
         {
-            _adminDal.Delete(admin);
+            admin.Status = false;
+            _adminDal.Update(admin);
         }
 
-        public void AdminUpdate(Admin admin)
+        public void Update(Admin admin)
         {
             _adminDal.Update(admin);
         }
